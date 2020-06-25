@@ -1,22 +1,22 @@
 # Tags
 
-Tags are being used for configuring subscriptions. They are also being provided in events' payload.
+Tags are used for configuring subscriptions. They are also provided in the payload of an event.
 
 ## Tags logic in subscriptions
 
-Tags implementing `AND` logic, for example, you want to receive events about inbound calls and outbound SMS. To achieve that you need to create two subscriptions:
+Tags implement `AND` logic; for example, if you want to receive events about inbound calls and outbound SMS, you need to create two subscriptions:
 
-1. With tags: `call` and `inbound`
-2. With tags: `message` and `outbound`
+1. With the tags: `call` and `inbound`
+2. With the tags: `message` and `outbound`
 
 If you want to receive events related to inbound calls and all sms:
 
-1. With tags: `call` and `inbound`
-2. With tag: `message`
+1. With the tags: `call` and `inbound`
+2. With the tag: `message`
 
-For all inbound activity, create just one subscription with tag `inbound`.
+To create a listener for all inbound activity, create just one subscription with tag `inbound`.
 
-If you create one subscription with tags `call` and `message` you will receive nothing, because there are now events which are related to call and SMS at the same time.
+If you create one subscription with the tags `call` and `message`, you will receive nothing, because there are no events that are related to both call and SMS.
 
 ## List of tags
 
