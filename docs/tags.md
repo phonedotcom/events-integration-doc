@@ -22,8 +22,8 @@ If you create one subscription with tags `call` and `message` you will receive n
 
 ### Common
 
-* __inbound__ - inbound activity
-* __outbound__ - outbound activity
+* __inbound__ - inbound activity (applies for calls and messages)
+* __outbound__ - outbound activity (applies for calls and messages)
 
 ### Calls
 
@@ -52,7 +52,7 @@ If you create one subscription with tags `call` and `message` you will receive n
 * __recording__ - some recording is available
 * __call-recording__ - call recording is available
 
-### Not in use, unstable or deprecated
+### Planned, unstable or deprecated
 
 * __received-message__ - message received
 * __sent-message__ - message sent

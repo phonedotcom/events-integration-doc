@@ -20,7 +20,10 @@
 * `uuid` - unique identifier of the call
 * `direction` - unique identifier of the call
 * `event_leg` - information about current event's leg _(see "Call's leg object")_
-* `first_leg` - information about first (main) leg of the call _(see "Call's leg object")_, will be identical to `event_leg` for first leg's events. In other case some data may not appear.
+* `first_leg` - information about first (main) leg of the call _(see "Call's leg object")_. `null` if `event_leg` is the first leg.
+
+_Also see [call events explanation](./call-events-explanation.md)_
+
 
 #### Call's leg object
 
@@ -29,11 +32,7 @@
 * `to` - leg's callee  _(see "Call's participant object")_
 * `is_first` - boolean value which shows is leg first (main) or not
 * `state` - leg's state. Possible values: `new`, `connecting`, `connected`, `completed`.
-* `completion_status` - leg's completion state. Possible values:
-    * `success` - leg was answered
-    * `cancelled` - leg was not answered
-    * `busy` - device was busy
-    * `failed` - error occurred
+* `completion_status` - leg's completion state. Possible values: `success` - leg was answered, `cancelled` - leg was not answered, `busy` - device was busy, `failed` - error occurred.
 
 #### Call's participant object
 
@@ -46,14 +45,34 @@
 
 ### Message
 
-
+* `uuid` - unique identifier of the message
+* `direction` - `inbound` or `outbound`
+* `state` - message delivery status: `received`, `sent`, etc.
+* `inbox` - information about inbox message belongs to
+    * `id` - ID of the message in the inbox
+    * `extension_id` - ID of the extension
+    * `did` - customer's number associated with the message
+* `from` - sender of the message _(see "Call's participant object" with `type=did`)_
+* `to` - recipients of the message _(array of "Call's participant object" with `type=did`)_
+* `type` - `sms` or `mms`
+* `message` - message text
+* `media` - message attachments (for `mms`). Array of object:
+    * `url` - URL of the attachment
+    * `type` - MIME type of the attachment
+    * `size` - size of the attachment in bytes
+    * `filename` - name of the attachment
+    * `thumbnail` - URL of thumbnail if exists
 
 ### Call log
+
+`uuid` - uuid of the call (call log)
 
 ### Recording
 
 `uuid` - uuid of the recording
 `type` - type of object; possible value: `call`
+`size` - size of the recording in bytes
+`duration` - recording duration in seconds
 
 ## Example
 

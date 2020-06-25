@@ -6,7 +6,7 @@ Phone.com provides support of the webhooks (HTTPS callbacks) for different [even
 
 Phone.com has some endpoints in the API which allow you to configure callbacks and subscribe for the only events you need.
 
-To use Phone.com API you need to have access token. Contact Phone.com support to discuss your integration and get one.
+To use Phone.com API you need to have access token. Contact Phone.com support by email api@phone.com to discuss your integration and get one.
 
 Endpoints will be described below, this section of the document represents the minimal set-up you need to start.
 
@@ -51,6 +51,10 @@ curl -L -X POST 'https://api.phone.com/v4/accounts/YOUR_VOIP_ID/integrations/eve
 --data-raw '{":tags": ["call"]}'
 ```
 
-More about [tags](docs/tags.md).
+More about [tags](./docs/tags.md).
 
 It may take up to 5 minutes for your new listener to start send you events.
+
+## Technical support
+
+Email: api@phone.com
