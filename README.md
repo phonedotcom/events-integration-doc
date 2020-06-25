@@ -1,6 +1,6 @@
 # Phone.com events v. 2 integration guide
 
-Phone.com provides support of the webhooks (HTTPS callbacks) for different [events](docs/events-format.md) associated with Phone.com accounts.
+Phone.com provides support of the webhooks (HTTPS callbacks) for different [events](./docs/events-format.md) associated with Phone.com accounts.
 
 ## Getting started
 
@@ -8,14 +8,14 @@ Phone.com has some endpoints in the API which allow you to configure callbacks a
 
 To use Phone.com API you need to have access token. Contact Phone.com support by email api@phone.com to discuss your integration and get one.
 
-Endpoints will be described below, this section of the document represents the minimal set-up you need to start.
+Full endpoints documentation can be found [here](./docs/api-endpoints.md), but this section of the document represents the minimal set-up you need to start receiving events.
 
 ### Create callback
 
 First of all you will need to define callback:
 
 ```
-curl -L -X POST 'https://api.phone.com/v4/accounts/YOUR_VOIP_ID/integrations/events/callbacks' \
+curl -L -X POST 'https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/callbacks' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
 --data-raw '{"config": {"url": "http://example.org"}}'
@@ -32,7 +32,7 @@ In the response you will receive JSON object.  In the next step you will need `i
 Next step is creating listener. 
 
 ```
-curl -L -X POST 'https://api.phone.com/v4/accounts/YOUR_VOIP_ID/integrations/events/listeners' \
+curl -L -X POST 'https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
 --data-raw '{"callback_id": CALLBACK_ID}'
@@ -45,7 +45,7 @@ In the response you will receive JSON object. In the next step you will need `id
 Now you need to subscribe your listener to some events. In the subscription you should define `:tags` of events you want receive.
 
 ```
-curl -L -X POST 'https://api.phone.com/v4/accounts/YOUR_VOIP_ID/integrations/events/listeners/LISTENER_ID/subscriptions' \
+curl -L -X POST 'https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID/subscriptions' \
 -H 'Content-Type: application/json' \
 -H 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
 --data-raw '{":tags": ["call"]}'
