@@ -1,10 +1,10 @@
 # Listener subscriptions
 
-Defines what kind of events should be sent to callback.
+Defines what kind of events should generate a callback.
 
 ## Get list of subscriptions
 
-Returns list of subscriptions for listener.
+Returns the list of subscriptions for a given listener.
 
 ```
 GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID/subscriptions
@@ -12,7 +12,7 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LIST
 
 ### Optional query parameters
 
-* `limit` - limit of the items in the output (default is 25)
+* `limit` - limit the number of items in the output payload (default is 25)
 * `offset` - list offset (default is 0)
 
 ### Response example
@@ -44,7 +44,7 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LIST
 
 ## Get subscription
 
-Returns subscription
+Returns a subscription
 
 ```
 GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID/subscriptions
@@ -63,7 +63,7 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LIST
 
 ## Create subscription
 
-Creates subscription
+Creates a subscription
 
 ```
 POST https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID/subscriptions
@@ -85,11 +85,11 @@ JSON with these mandatory parameters:
 
 ### Response
 
-The same as for "Get subscription".
+Similar to "Get subscription".
 
 ## Delete subscription
 
-Deletes subscription. 
+Deletes a subscription. 
 
 ```
 DELETE https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID/subscriptions/SUBSCRIPTION_ID
