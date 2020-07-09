@@ -12,7 +12,7 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LIST
 
 ### Optional query parameters
 
-* `limit` - limit the number of items in the output payload (default is 25)
+* `limit` - limits the number of items in the output (default is 25)
 * `offset` - list offset (default is 0)
 
 ### Response example
@@ -85,7 +85,7 @@ JSON with these mandatory parameters:
 
 ### Response
 
-Similar to "Get subscription".
+Similar to the "Get subscription" response.
 
 ## Delete subscription
 

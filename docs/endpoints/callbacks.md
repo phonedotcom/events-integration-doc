@@ -12,7 +12,7 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/callbacks
 
 ### Optional query parameters
 
-* `limit` - limit the number of items in the output (default is 25)
+* `limit` - limits the number of items in the output (default is 25)
 * `offset` - list offset (default is 0)
 * `filters[name]` - filter callbacks by name
 * `filters[profile_id]` - filter callbacks by the ID of the profile

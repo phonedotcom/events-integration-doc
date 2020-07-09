@@ -8,8 +8,8 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/overview
 
 ### Optional query parameters
 
-* `limit` - limit of the items in the output (default is 25)
-* `offset` - list offset (default is 0)
+* `limit` - limits the number of items in the output (the default is 25)
+* `offset` - list offset (the default is 0)
 
 ### Response example
 

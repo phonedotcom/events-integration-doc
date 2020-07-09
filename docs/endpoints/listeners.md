@@ -12,7 +12,7 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners
 
 ### Optional query parameters
 
-* `limit` - limits the number of items in the API response (default is 25)
+* `limit` - limits the number of items in the output (default is 25)
 * `offset` - list offset (default is 0)
 * `filters[callback_id]` - filters listeners based on a given callback ID
 
@@ -102,7 +102,8 @@ A JSON with at least all mandatory parameters:
 
 ### Response
 
-Similar to the response from "Get listener".
+Similar to the "Get listener" response.
+
 
 
 ## Update listener
@@ -119,7 +120,7 @@ JSON with all the required parameters neded for the "Create listener" API.
 
 ### Response
 
-Similar to the response from "Get listener".
+Similar to the "Get listener" response.
 
 ## Delete listener
 

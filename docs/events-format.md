@@ -2,23 +2,23 @@
 
 ## Common
 
-* `uuid` - unique identifier of the event
-* `version` - version of event's format 
-* `listener_id` - ID of the listener 
-* `context` - Context of the event (contains information about account or extension associated with the listener)
-* `timestamp` - UNIX timestamp (seconds)
-* `timestamp_ns` - UNIX timestamp (nanoseconds)
-* `tags` - list of event's [tags](./tags.md)
-* `data_type` - type of the object in `data`
+* `uuid` - a unique identifier for an event
+* `version` - the event format version 
+* `listener_id` - the listener ID 
+* `context` - the event context (contains information about the account or extension associated with the listener)
+* `timestamp` - UNIX timestamp (in seconds)
+* `timestamp_ns` - UNIX timestamp (in nanoseconds)
+* `tags` - list of events' [tags](./tags.md)
+* `data_type` - the object type in `data`
 * `data_object_uuid` - unique identifier of the data object
-* `data` - will be different for different values of the field `data_type`.
+* `data` - contabines object of type accordimg to the value in `data_type`.
 
 ## Data per object type
 
 ### Call
 
-* `uuid` - unique identifier of the call
-* `direction` - unique identifier of the call
+* `uuid` - a unique identifier for a call
+* `direction` - direction identifier of the call (inbound or outbound)
 * `event_leg` - information about current event's leg _(see "Call's leg object")_
 * `first_leg` - information about first (main) leg of the call _(see "Call's leg object")_. `null` if `event_leg` is the first leg.
 
@@ -27,20 +27,20 @@ _Also see [call events explanation](./call-events-explanation.md)_
 
 #### Call's leg object
 
-* `uuid` - unique identifier of the call's leg (the same as call's UUID for the first leg) 
+* `uuid` - a unique identifier of the call-leg (same as the call's UUID for the first leg) 
 * `from` - leg's caller _(see "Call's participant object")_
 * `to` - leg's callee  _(see "Call's participant object")_
-* `is_first` - boolean value which shows is leg first (main) or not
+* `is_first` - boolean value which indicates if this is the first (main) leg of a call
 * `state` - leg's state. Possible values: `new`, `connecting`, `connected`, `completed`.
 * `completion_status` - leg's completion state. Possible values: `success` - leg was answered, `cancelled` - leg was not answered, `busy` - device was busy, `failed` - error occurred.
 
 #### Call's participant object
 
-* `type` - type of the call's participant entity. Possible values: `device`, `extension`, `did` (phone number)
+* `type` - the type of the call's participant entity. Possible values: `device`, `extension`, `did` (phone number)
 * `id` - ID of the object. For `type=did` it will be phone number
 * `line` - device line; applicable for `type=device` only
 * `domain` - SIP domain; applicable for `type=device` only
-* `extension_id` - ID of extension; applicable for `type=device` and `type=extension`
+* `extension_id` - the ID of extension; applicable for `type=device` and `type=extension`
 * `extension` - extension number; applicable for `type=device` and `type=extension`
 
 ### Message
@@ -48,9 +48,9 @@ _Also see [call events explanation](./call-events-explanation.md)_
 * `uuid` - unique identifier of the message
 * `direction` - `inbound` or `outbound`
 * `state` - message delivery status: `received`, `sent`, etc.
-* `inbox` - information about inbox message belongs to
-    * `id` - ID of the message in the inbox
-    * `extension_id` - ID of the extension
+* `inbox` - information about inbox storing the message
+    * `id` - the ID of the message in the inbox
+    * `extension_id` - the ID of the extension owning the inbox
     * `did` - customer's number associated with the message
 * `from` - sender of the message _(see "Call's participant object" with `type=did`)_
 * `to` - recipients of the message _(array of "Call's participant object" with `type=did`)_
@@ -65,18 +65,18 @@ _Also see [call events explanation](./call-events-explanation.md)_
 
 ### Call log
 
-`uuid` - uuid of the call (call log)
+`uuid` - the uuid of the call (call log)
 
 ### Recording
 
-`uuid` - uuid of the recording
-`type` - type of object; possible value: `call`
-`size` - size of the recording in bytes
+`uuid` - the uuid of the recording
+`type` - object type; possible value: `call`
+`size` - recording size in bytes
 `duration` - recording duration in seconds
 
 ## Example
 
-This is example of call event. You can find more examples in [this directory](./../events-examples)
+This is an example of a call event. You can find more examples in [this directory](./../events-examples)
 
 ```json
 {

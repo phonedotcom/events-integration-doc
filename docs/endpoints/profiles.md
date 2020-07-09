@@ -1,10 +1,10 @@
 # Profiles
 
-Profile allows to specify support email for the callback.
+A Profile allows to specify a notifications email for a callback. Notifications are emited  when there is a need to notify the callback owner of some issues like timeouts, or de-regsitartion of the callback.
 
 ## Get list of profiles
 
-Returns list of profiles you have on account (extension)
+Returns list of profiles created on the account (or extension)
 
 ```
 GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/profiles
@@ -12,8 +12,8 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/profiles
 
 ### Optional query parameters
 
-* `limit` - limit of the items in the output (default is 25)
-* `offset` - list offset (default is 0)
+* `limit` - limits the number of items in the output (the default is 25)
+* `offset` - list offset (the default is 0)
 
 ### Response example
 
@@ -48,7 +48,7 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/profiles
 
 ## Get profile
 
-Returns profile
+Returns a profile
 
 ```
 GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/profiles/PROFILE_ID
@@ -79,10 +79,10 @@ POST https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/profiles/PROF
 
 ### Request
 
-JSON with these mandatory parameters:
+JSON with the following mandatory parameters:
 
-* `name` - `string`, profile name
-* `support_email` - `string`, email for callback's support (will be used in case of problems with callback)
+* `name` - `string`, the profile name
+* `support_email` - `string`, notification email in case of no-responsive callback.
 
 #### Example
 
@@ -95,12 +95,12 @@ JSON with these mandatory parameters:
 
 ### Response
 
-The same as for "Get profile".
+Similar to the "Get profile" response.
 
 
 ## Update profile
 
-Updates some properties of the profile
+Updates one or more properties of a profile
 
 ```
 PATCH https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/profiles/PROFILE_ID
@@ -108,15 +108,15 @@ PATCH https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/profiles/PRO
 
 ### Request
 
-JSON with any of parameters available for "Create profile".
+JSON with any of the parameters needed for the "Create profile" API.
 
 ### Response
 
-The same as for "Get profile".
+Similar to the "Get profile" response.
 
 ## Delete profile
 
-Deletes profile. Pay attention, that API will not allow you to delete profile which is used for some callback. 
+Deletes profile. Pay attention, that API will not allow you to delete profile which is associated to a callback. 
 
 ```
 DELETE https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/profiles/PROFILE_ID

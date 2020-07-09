@@ -6,7 +6,7 @@ Phone.com provides support for webhooks (HTTPS callbacks) for different [events]
 
 There are endpoints in the API that allow you to configure callbacks and subscribe only to the events you need.
 
-You need to have an access token to use the Phone.com API.  Contact support by email at api@phone.com to discuss your integration and get a key.
+You need to have an access token to use the Phone.com API. Contact support by email at api@phone.com to discuss your integration and get a key.
 
 Full documentation of all endpoints can be found [here](./docs/api-endpoints.md); this section of the document discusses only the minimal set-up you need to start receiving events.
 
@@ -25,7 +25,7 @@ _Pay attention that the `url` you use in the `config` should return 200 or 201 H
 
 You may use one callback for multiple different listeners.
 
-In the response you will receive a JSON object.  In the next step you will need the `id` from it.
+In the response you will receive a JSON object.  In the next step you will need the `id` provided in the callback JSON object.
 
 ### Create listener
 
@@ -38,11 +38,11 @@ curl -L -X POST 'https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/l
   --data-raw '{"callback_id": CALLBACK_ID}'
 ```
 
-In the response you will receive a JSON object. Like before, you will need the `id` from that object for the next step.
+In the response you will receive a JSON object. Like before, you will need the `id` from that JSON object for the next step.
 
 ### Create subscription
 
-Now you need to set your listener to subscribe to some events. In the subscription, you should define `:tags` of events you want receive.
+Now you need to have your listener to subscribe to some events. In the subscription, you should define the `:tags` of the events you want to receive.
 
 ```
 curl -L -X POST 'https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID/subscriptions' \
@@ -53,7 +53,7 @@ curl -L -X POST 'https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/l
 
 Find out more about [tags](./docs/tags.md).
 
-It may take up to 5 minutes for your new listener to start sending you events.
+Note: Due to caching it may take up to 5 minutes for your new listener to be activated.
 
 ## Technical support
 
