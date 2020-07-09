@@ -4,7 +4,7 @@ Callbacks represent URLs on your side which will be called by our system when ev
 
 ## Get list of callbacks
 
-Returns list of callbacks you have on account (extension)
+Returns the list of instantiated callbacks on the account (or extension)
 
 ```
 GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/callbacks
@@ -12,11 +12,11 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/callbacks
 
 ### Optional query parameters
 
-* `limit` - limit of the items in the output (default is 25)
+* `limit` - limit the number of items in the output (default is 25)
 * `offset` - list offset (default is 0)
 * `filters[name]` - filter callbacks by name
-* `filters[profile_id]` - filter callbacks by ID of profile
-* `filters[fallback_callback_id]` - filter callbacks by ID of the fallback callback
+* `filters[profile_id]` - filter callbacks by the ID of the profile
+* `filters[fallback_callback_id]` - filter by the ID of the fallback-callback profile
 
 ### Response example
 
@@ -109,19 +109,19 @@ JSON with these parameters:
 ##### Config for HTTPS and HTTP modes
 
 * `url` - `string`, __required__, URL of the callback
-* `method` - `string`, URL of the callback (default is `POST`)
-* `headers` - `array` or `null`, __required__, URL of the callback, (default is `null`). Array items:
+* `method` - `string`, callback HTTP method POST/GET (default is `POST`)
+* `headers` - `array` or `null`, __required__, callback HTTP Headers, (default is `null`). Array items:
     * `name` - header name
     * `value` - header value
 * `timeout` - `integer` or `null`, Callback timeout (default is `null`, system timeout will be used)  
 
 #### Optional
 
-* `name` - `string` or `null`, name of the callback (default is `null`)
-* `fallback_callback_id` - `integer` or `null`, ID of the callback to be the fallback for this callback (default is `null`)   
+* `name` - `string` or `null`, the callback name (default is `null`)
+* `fallback_callback_id` - `integer` or `null`, ID of the callback to be the fallback for the main callback (default is `null`)   
 * `profile_id` - `integer` or `null`, ID of the [profile](./profiles.md) (default is `null`)
-* `enabled` - `boolean`, is callback enabled (default is `true`)
-* `mode` - `string`, callback type (default is `HTTPS`)
+* `enabled` - `boolean`, enable or disable callback (default is `true`)
+* `mode` - `string`, callback type HTTP/HTTPS (default is `HTTPS`)
 
 #### Example
 
@@ -144,7 +144,7 @@ JSON with these parameters:
 
 ### Response
 
-The same as for "Get callback".
+Similar to the "Get callback" response.
 
 
 ## Update callback
@@ -157,15 +157,15 @@ PATCH https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/callbacks/CA
 
 ### Request
 
-JSON with any of parameters available for "Create callback".
+JSON with the parameters needed for "Create callback".
 
 ### Response
 
-The same as for "Get callback".
+Similar to the "Get callback" response.
 
 ## Delete callback
 
-Deletes callback. Pay attention, that API will not allow you to delete callback which is used for some listener of as fallback for another callback. 
+Deletes a callback. Pay attention, the API will not allow the deletion of a callback which is used as a fallback for another callback. 
 
 ```
 DELETE https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/callbacks/CALLBACK_ID
