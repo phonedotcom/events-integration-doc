@@ -1,10 +1,10 @@
 # Listeners
 
-Listener is entity which connects subscriptions with callback.
+Listener is an entity that associates subscriptions with callbacks.
 
 ## Get list of listeners
 
-Returns list of listeners you have on account (extension)
+Returns list of listeners created on account (or an extension)
 
 ```
 GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners
@@ -12,9 +12,9 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners
 
 ### Optional query parameters
 
-* `limit` - limit of the items in the output (default is 25)
+* `limit` - limits the number of items in the API response (default is 25)
 * `offset` - list offset (default is 0)
-* `filters[callback_id]` - filter listeners by ID of callback
+* `filters[callback_id]` - filters listeners based on a given callback ID
 
 ### Response example
 
@@ -51,7 +51,7 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners
 
 ## Get listener
 
-Returns listener
+Returns a listener
 
 ```
 GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID
@@ -73,7 +73,7 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LIST
 
 ## Create listener
 
-Creates listener
+Creates a listener
 
 ```
 POST https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID
@@ -81,7 +81,7 @@ POST https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LIS
 
 ### Request
 
-JSON with these mandatory parameters:
+A JSON with at least all mandatory parameters:
 
 #### Mandatory
 
@@ -90,7 +90,7 @@ JSON with these mandatory parameters:
 #### Optional
 
 * `version` - `string`, events format (default is `2.0.0`)
-* `expires_at` - `integer` or `null`, allows to define expiration time for listener
+* `expires_at` - `integer` or `null`, defines an expiration time for a listener
 
 #### Example
 
@@ -102,12 +102,12 @@ JSON with these mandatory parameters:
 
 ### Response
 
-The same as for "Get listener".
+Similar to the response from "Get listener".
 
 
 ## Update listener
 
-Updates some properties of the listener.
+Updates one or more properties of the listener.
 
 ```
 PATCH https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID
@@ -115,15 +115,15 @@ PATCH https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LI
 
 ### Request
 
-JSON with any of parameters available for "Create listener".
+JSON with all the required parameters neded for the "Create listener" API.
 
 ### Response
 
-The same as for "Get listener".
+Similar to the response from "Get listener".
 
 ## Delete listener
 
-Deletes listener. 
+Deletes a listener. 
 
 ```
 DELETE https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID
