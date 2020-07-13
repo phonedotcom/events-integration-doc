@@ -1,0 +1,52 @@
+{
+  "uuid": "00000000-0000-0000-0000-000000000000",
+  "version": "2.0.0",
+  "listener_id": 8580,
+  "context": {
+    "type": "account",
+    "id": 1000002,
+    "voip_id": 1000002
+  },
+  "timestamp": 1593095761,
+  "timestamp_ns": 1593095761000000000,
+  "tags": [
+    "message",
+    "*ms-message",
+    "sms-message",
+    "received-message",
+    "inbound"
+  ],
+  "data_type": "message",
+  "data_object_uuid": "11111111-1111-1111-1111-111111111111",
+  "data": {
+    "uuid": "11111111-1111-1111-1111-111111111111",
+    "direction": "inbound",
+    "state": "received",
+    "inbox": {
+      "id": 43625168,
+      "extension_id": null,
+      "did": "+15550000002"
+    },
+    "from": {
+      "type": "did",
+      "id": "+15550000001"
+    },
+    "to": [
+      {
+        "type": "did",
+        "id": "+15550000002"
+      }
+    ],
+    "type": "mms",
+    "message": "Message test",
+    "media": [
+      {
+        "url": "https://s3.amazonaws.com/files.messages.phone.com/a1000002/a/xxxxxxxxxxxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/my-file.jpg",
+        "type": "image/jpeg",
+        "size": 588394,
+        "filename": "my-file.jpg",
+        "thumbnail": "https://s3.amazonaws.com/files.messages.phone.com/a1000002/a/xxxxxxxxxxxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/my-file_thumbnail.jpg"
+      }
+    ]
+  }
+}
