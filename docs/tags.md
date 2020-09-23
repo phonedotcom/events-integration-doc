@@ -46,6 +46,13 @@ If you create one subscription with the tags `call` and `message`, you will rece
 * __mms-message__ - message is of type MMS
 * __*ms-message__ - message is of type SMS or MMS
 
+### API Errors
+
+_Account level only_
+
+* __api-error__ - request to API returned error
+* __api-error-trusted__ - request to API returned error (excluding unauthorized requests)
+
 ### Misc
 
 * __call-log__ - call log record is available or just got updated (see [https://apidocs.phone.com/docs/get-account-call-log]())
@@ -58,7 +65,7 @@ If you create one subscription with the tags `call` and `message`, you will rece
 * __sent-message__ - message sent
 * __delivered-message__ - message delivered
 * __fax__ - fax related event
-* __voicemail__ - voicemail received
+* __voicemail-recording__ - voicemail received
 * __voicemail-transcript__ - voicemail transcription is ready
 * __listener-callback__
 * __deactivated-listener-callback__
