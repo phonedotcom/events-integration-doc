@@ -113,7 +113,18 @@ JSON with these parameters:
 * `headers` - `array` or `null`, __required__, callback HTTP Headers, (default is `null`). Array items:
     * `name` - header name
     * `value` - header value
-* `timeout` - `integer` or `null`, Callback timeout (default is `null`, system timeout will be used)  
+* `timeout` - `integer` or `null`, Callback timeout (default is `null`, system timeout will be used)
+* `rate-limit` - `object` or `null`, Allows to suppress events exceeding the rate limit configuration
+    * `number` - `integer`, __required__, Number of events allowed in the period
+    * `period` - `integer`, __required__, Period in seconds
+
+##### Config for EMAIL mode
+
+* `email` - `string`, __required__, Email for events delivery
+* `mode` - `string`, email contents type: `json` or `text` (default is `json`). `json` is identical to [event](./../events-format.md) (just `unsubscribe_link` parameter is added), `text` is [human-friendly representation](./../../events-examples/api-error-email-text.txt) of event.
+* `rate-limit` - `object` or `null`, Allows to suppress events exceeding the rate limit configuration
+    * `number` - `integer`, Number of events allowed in the period
+    * `period` - `integer`, Period in seconds
 
 #### Optional
 
@@ -121,7 +132,7 @@ JSON with these parameters:
 * `fallback_callback_id` - `integer` or `null`, ID of the callback to be the fallback for the callback (default is `null`)   
 * `profile_id` - `integer` or `null`, ID of the [profile](./profiles.md) (default is `null`)
 * `enabled` - `boolean`, enable or disable callback (default is `true`)
-* `mode` - `string`, callback type HTTP/HTTPS (default is `HTTPS`)
+* `mode` - `string`, callback type `HTTP`, `HTTPS`, `EMAIL` (default is `HTTPS`)
 
 #### Example
 
