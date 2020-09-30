@@ -1,0 +1,26 @@
+UUID: 00000000-0000-0000-0000-000000000000
+Version: 2.0.0
+Listener ID: 1000
+Context / Type: account
+Context / ID: 1000002
+Context / Voip ID: 1000002
+Timestamp: 1601316901
+Timestamp ns: 1601316901000000000
+Tags [0]: api-error
+Tags [1]: api-error-trusted
+Data type: api-error
+Data object UUID: 11111111-1111-1111-1111-111111111111
+Data / Error: Forbidden
+Data / Request / Method: POST
+Data / Request / Url: /v4/accounts/1000002/fax
+Data / Request / Body size: 1035
+Data / Response / Status: 403
+Data / Response / Payload: {
+ "@error": {
+   "@message": "Forbidden",
+   "@httpStatusCode": 403,
+   "@time": "2020-09-28T18:15:01.643Z",
+   "@proxy": true
+ }
+}
+Unsubscribe link: https://events.cit-phone.com/callback-unsubscribe/1000/0123456789abcdef0123456789abcdef
