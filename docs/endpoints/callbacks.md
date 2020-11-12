@@ -95,7 +95,7 @@ _Pay attention that if config has headers with names like `Authorization` or `X-
 Creates callback
 
 ```
-POST https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/callbacks/CALLBACK_ID
+POST https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/callbacks
 ```
 
 ### Request
