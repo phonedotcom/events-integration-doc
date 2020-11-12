@@ -8,7 +8,7 @@ Name of the application: `google-analytics`
 
 ### Parameters
 
-* `tracking_id` - your Google tracking ID like `UA-00000000-01`
+* `tracking_id` - your Google tracking ID like `UA-00000000-1`
 * `static` - object with of static values added to the event.
     * Available keys of the object: `cd1`, `cd2`, `cd4`, `cd5`, `cid`, `dh`, `dl`, `ea`, `ec`, `el`, `ev`, `ni`, `t`, `tid`, `uid`, `v`.
     * Values will be added to event as is.
@@ -32,7 +32,7 @@ Read more about Google Analytics parameters: https://developers.google.com/analy
       "config": {
         "application": "google-analytics",
         "parameters": {
-          "tracking_id": "UA-00000000-01",
+          "tracking_id": "UA-00000000-1",
           "static": {
             "ec": "Phone call"
           },

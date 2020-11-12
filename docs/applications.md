@@ -13,7 +13,7 @@ Example of the payload for creating callback with `mode` `APPLICATION`:
       "config": {
         "application": "google-analytics",
         "parameters": {
-          "tracking_id": "UA-00000000-01",
+          "tracking_id": "UA-00000000-1",
           "static": {
             "ec": "Phone call"
           },
