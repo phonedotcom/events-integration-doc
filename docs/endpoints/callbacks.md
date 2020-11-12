@@ -126,13 +126,18 @@ JSON with these parameters:
     * `number` - `integer`, Number of events allowed in the period
     * `period` - `integer`, Period in seconds
 
+##### Config for APPLICATION mode
+
+* `application` - `string`, __required__, Name of application. See [list of applications](./../applications.md).
+* `paramters` - `object`, configuration of application. Ream more about [application](./../applications) for details.
+
 #### Optional
 
 * `name` - `string` or `null`, the callback name (default is `null`)
 * `fallback_callback_id` - `integer` or `null`, ID of the callback to be the fallback for the callback (default is `null`)   
 * `profile_id` - `integer` or `null`, ID of the [profile](./profiles.md) (default is `null`)
 * `enabled` - `boolean`, enable or disable callback (default is `true`)
-* `mode` - `string`, callback type `HTTP`, `HTTPS`, `EMAIL` (default is `HTTPS`)
+* `mode` - `string`, callback type `HTTP`, `HTTPS`, `APPLICATION`, `EMAIL` (default is `HTTPS`)
 
 #### Example
 
