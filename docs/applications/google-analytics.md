@@ -10,10 +10,10 @@ Name of the application: `google-analytics`
 
 * `tracking_id` - your Google tracking ID like `UA-00000000-1`
 * `static` - object with of static values added to the event.
-    * Available keys of the object: `cd1`, `cd2`, `cd4`, `cd5`, `cid`, `dh`, `dl`, `ea`, `ec`, `el`, `ev`, `ni`, `t`, `tid`, `uid`, `v`.
+    * Available keys of the object: `cd1`, `cd2`, `cd3`, `cd4`, `cd5`, `cid`, `dh`, `dl`, `ea`, `ec`, `el`, `ev`, `ni`, `t`, `tid`, `uid`, `v`.
     * Values will be added to event as is.
 * `dynamic` - object with of static values added to the event.
-    * Available keys of the object: `cd1`, `cd2`, `cd4`, `cd5`, `cid`, `dh`, `dl`, `ea`, `ec`, `el`, `ev`, `ni`, `uid`.
+    * Available keys of the object: `cd1`, `cd2`, `cd3`, `cd4`, `cd5`, `cid`, `dh`, `dl`, `ea`, `ec`, `el`, `ev`, `ni`, `uid`.
     * Available values - the actual values will be extracted from the event: 
         * `call_duration` - duration of the call. It will work for `call-log` events only.
         * `direction` - direction of the call/message - `in` or `out`.
