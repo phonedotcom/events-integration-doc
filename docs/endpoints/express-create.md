@@ -15,15 +15,15 @@ A JSON with at least all mandatory parameters:
 Callback should be defined as ID or payload:
 
 * `callback_id` - `integer`, callback ID
-* `:callback` - `object`, see "Create callback" in [Callbacks](./callbacks.md)
+* `:callback` - `object`, see "Create callback" in [Callbacks](./callbacks.md#create-callback)
 
 At least one subscription is required:
 
-* `subscriptions` - `array` of Subscriptions, see "Create subscription" in [Listener Subscriptions](./listener-subscriptions.md)
+* `subscriptions` - `array` of Subscriptions, see "Create subscription" in [Listener Subscriptions](./listener-subscriptions.md#create-subscription)
 
 #### Optional
 
-See "Create listener" in [Listeners](./listeners.md)
+See "Create listener" in [Listeners](./listeners.md#create-listener)
 
 #### Example 
 
