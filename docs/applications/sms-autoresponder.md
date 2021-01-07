@@ -1,6 +1,6 @@
 # SMS Autoresponder
 
-This application allows you to configure automatic SMS responce (notification).
+This application allows you to configure automatic SMS response (notification).
 
 ## Configuration
 
