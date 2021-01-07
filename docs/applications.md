@@ -3,6 +3,7 @@
 Applications provide different event-based functionality.
 
 * [Google Analytics](./applications/google-analytics.md)
+* [SMS Autoresponder](./applications/sms-autoresponder.md)
 
 Example of the payload for creating callback with `mode` `APPLICATION`:
 
