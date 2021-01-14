@@ -1,6 +1,6 @@
 # Phone.com events v. 2 integration guide
 
-Phone.com provides support for webhooks (HTTPS callbacks) for different [events](./docs/events-format.md) associated with Phone.com accounts.
+Phone.com provides support for webhooks (HTTPS callbacks) and some other types of integration for different [events](./docs/events-format.md) associated with Phone.com accounts.
 
 ## Getting started
 
