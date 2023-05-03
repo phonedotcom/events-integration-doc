@@ -63,9 +63,9 @@ GET https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LIST
 }
 ```
 
-## Create subscription
+## Create filter
 
-Creates a subscription
+Creates a filter
 
 ```
 POST https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID/filters
@@ -73,25 +73,56 @@ POST https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LIS
 
 ### Request
 
-JSON with these mandatory parameters:
+JSON with these parameters:
 
-* `:tags` - `string[]`, array of `string`. See [tags](./../tags.md).
+* `filter_type` - `string`. Mandatory. Filter's fype. Supported values: `number`
+* `filter_value` - `object`. Mandatory. Configuration of the filter (different for different filter types)
+* `not_logic` - `boolean`. Options (`false` by default). `true` value inverts logic of the filter so events satistying filter's criterea will NOT be emitted.
+
+#### `filter_value` per type
+
+##### `filter_type=number`
+
+Provde one of parameters
+
+* `eq` - `string`. Phone number (`+` followed by digits).
+* `in` - `string[]`. List of numbers.
+* `match` - `string`. Pattern for number (use `%` as wildcard)
 
 #### Example
 
 ```json
 {
-  ":tags": ["call", "inbound"]
+  "filter_type": "number",
+  "filter_value": {
+    "eq": "+15555551234"
+  }
 }
 ```
 
 ### Response
 
-Similar to the "Get subscription" response.
+Similar to the "Get filter" response.
 
-## Delete subscription
+## Update filter
 
-Deletes a subscription. 
+Updates a filter. 
+
+```
+PATCH https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID/filters/SUBSCRIPTION_ID
+```
+
+### Request
+
+Similar to the "Create filter" request.
+
+### Response
+
+Similar to the "Get filter" response.
+
+## Delete filter
+
+Deletes a filter. 
 
 ```
 DELETE https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID/filters/SUBSCRIPTION_ID
