@@ -55,6 +55,17 @@ Find out more about [tags](./docs/tags.md).
 
 Note: Due to caching it may take up to 5 minutes for your new listener to be activated.
 
+### Create filter
+
+There is a way to filter events. For example, by phone number:
+
+```
+curl -L -X POST 'https://api.phone.com/v4/accounts/VOIP_ID/integrations/events/listeners/LISTENER_ID/filters' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_ACCESS_TOKEN' \
+  --data-raw '{"filter_type": "number", "filter_value": { "eq": "+15551234567" }}'
+```
+
 ## Technical support
 
 Email: api@phone.com
